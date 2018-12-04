@@ -1,5 +1,5 @@
 # 레바툴 Beta
-Made by.그린젤리 (GreenJelly)
+Made by.이요 (IYO)
 
 프로그램과 images폴더는 무조건 한 공간(폴더) 안에 있어야 합니다.
 
