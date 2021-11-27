@@ -1,34 +1,34 @@
-;¾îÀÌ¾îÀÌ ¹»º¸´Â°Å¾ß Àú¸®°¡
-;ÀÌ°Ç ³ª¸¸º¼ ¼ö ÀÖ´Â Áß¿äÇÑ°ÍÀÌ¶õ ¸»ÀÌ´Ù
+;ì–´ì´ì–´ì´ ë­˜ë³´ëŠ”ê±°ì•¼ ì €ë¦¬ê°€
+;ì´ê±´ ë‚˜ë§Œë³¼ ìˆ˜ ìˆëŠ” ì¤‘ìš”í•œê²ƒì´ë€ ë§ì´ë‹¤
 #include ReadURL.ahk             
-URL := "https://raw.githubusercontent.com/IYO1585/revatool/master/README.md"                        
+URL := "https://raw.githubusercontent.com/HumanKR/revatool/master/README.md"                        
 Result := ReadURL(URL)
 Version := 2.3
-RegExMatch(Result,"\WÇöÀç ÃÖ½Å¹öÀüÀº (.*?)ÀÔ´Ï´Ù.\W",Latest)      
+RegExMatch(Result,"\Wí˜„ì¬ ìµœì‹ ë²„ì „ì€ (.*?)ì…ë‹ˆë‹¤.\W",Latest)      
 if (Latest1 > Version)
 {
-	MsgBox, 4164, ,ÇöÀç ÃÖ½Å¹öÀüÀº %Latest1%ÀÔ´Ï´Ù.`nÁö±İ ¾÷µ¥ÀÌÆ® ÇÏ½Ã°Ú½À´Ï±î?
+	MsgBox, 4164, ,í˜„ì¬ ìµœì‹ ë²„ì „ì€ %Latest1%ì…ë‹ˆë‹¤.`nì§€ê¸ˆ ì—…ë°ì´íŠ¸ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?
 	IfMsgBox, Yes
 	{
 		Run, "https://github.com/IYO1585/revatool"
 	}
 }
 
-Gui, Add, Tab2, x2 y-1 w400 h160 +, Á¤º¸|·Î±×(W.I.P)
-Gui, Tab, Á¤º¸
-Gui, Add, Text, x102 y29 w200 h20 + +Center, ÀüÀå¿¡¼­ F2¸¦ ´©¸£¸é ¸®°×ÀÌ µË´Ï´Ù
-Gui, Add, Text, x32 y49 w350 h20 +Center, »óÁ¡/±âÅ¸¾ÆÀÌÅÛ¿¡¼­ F3¸¦ ´©¸£¸é Ç×¾Æ¸®¸¦ ÀÚµ¿À¸·Î ±úÁİ´Ï´Ù
-Gui, Add, Button, x302 y129 w90 h20 +Center gÅ©·¹µ÷, Å©·¹µ÷
-Gui, Add, Text, x67 y69 w270 h20 , F3 »ç¿ë µµÁß¿¡ ±×¸¸ÇÏ°í½Í´Ù¸é F4¸¦ ´­·¯ÁÖ¼¼¿ä
-Gui, Add, Text, x13 y135 w150 h20, ÇöÀç¹öÀü: %Version%
-Gui, Tab, ·Î±×
-Gui, Add, ListView, x12 y29 w180 h120 vLog, ÀÌ¸§|°¹¼ö|½Ã°£
-Gui, Tab, ·Î±×
-Gui, Add, Button, x282 y89 w110 h20 g»èÁ¦, ·Î±× ÀüÃ¼ »èÁ¦
-Gui, Tab, ·Î±×
-Gui, Add, Button, x282 y119 w110 h20 gÀúÀå, ÇöÀç ·Î±× ÀúÀå
+Gui, Add, Tab2, x2 y-1 w400 h160 +, ì •ë³´|ë¡œê·¸(W.I.P)
+Gui, Tab, ì •ë³´
+Gui, Add, Text, x102 y29 w200 h20 + +Center, ì „ì¥ì—ì„œ F2ë¥¼ ëˆ„ë¥´ë©´ ë¦¬ê²œì´ ë©ë‹ˆë‹¤
+Gui, Add, Text, x32 y49 w350 h20 +Center, ìƒì /ê¸°íƒ€ì•„ì´í…œì—ì„œ F3ë¥¼ ëˆ„ë¥´ë©´ í•­ì•„ë¦¬ë¥¼ ìë™ìœ¼ë¡œ ê¹¨ì¤ë‹ˆë‹¤
+Gui, Add, Button, x302 y129 w90 h20 +Center gí¬ë ˆë”§, í¬ë ˆë”§
+Gui, Add, Text, x67 y69 w270 h20 , F3 ì‚¬ìš© ë„ì¤‘ì— ê·¸ë§Œí•˜ê³ ì‹¶ë‹¤ë©´ F4ë¥¼ ëˆŒëŸ¬ì£¼ì„¸ìš”
+Gui, Add, Text, x13 y135 w150 h20, í˜„ì¬ë²„ì „: %Version%
+Gui, Tab, ë¡œê·¸
+Gui, Add, ListView, x12 y29 w180 h120 vLog, ì´ë¦„|ê°¯ìˆ˜|ì‹œê°„
+Gui, Tab, ë¡œê·¸
+Gui, Add, Button, x282 y89 w110 h20 gì‚­ì œ, ë¡œê·¸ ì „ì²´ ì‚­ì œ
+Gui, Tab, ë¡œê·¸
+Gui, Add, Button, x282 y119 w110 h20 gì €ì¥, í˜„ì¬ ë¡œê·¸ ì €ì¥
 ; Generated using SmartGUI Creator for SciTE
-Gui, Show, w408 h166, ·¹¹ÙÅøBeta
+Gui, Show, w408 h166, ë ˆë°”íˆ´Beta
 
 return
 
@@ -37,22 +37,22 @@ ExitApp
 
 escape := false
 
-Å©·¹µ÷:
-MsgBox, 0, ÁøÂ¥ °£´ÜÇÑ Å©·¹µ÷, Made by. IYO
+í¬ë ˆë”§:
+MsgBox, 0, ì§„ì§œ ê°„ë‹¨í•œ í¬ë ˆë”§, Made by. IYO
 return
 
-»èÁ¦:
+ì‚­ì œ:
 gui,submit,nohide
 LV_Delete()
 return
 
-ÀúÀå:
-MsgBox, 4, ÁÖÀÇ, Á¤¸» ·Î±×¸¦ ÀúÀå ÇÏ½Ã°Ú½À´Ï±î?
+ì €ì¥:
+MsgBox, 4, ì£¼ì˜, ì •ë§ ë¡œê·¸ë¥¼ ì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?
 ifmsgbox, yes
 {
 	IfExist, %A_ScriptDir%\log.txt
 	{
-		MsgBox, 4, ÁÖÀÇ, ·Î±×°¡ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù. »èÁ¦ÇÏ°í ÁøÇàÇØµµ ±¦Âú¾Æ¿ä..?
+		MsgBox, 4, ì£¼ì˜, ë¡œê·¸ê°€ ì´ë¯¸ ì¡´ì¬í•©ë‹ˆë‹¤. ì‚­ì œí•˜ê³  ì§„í–‰í•´ë„ ê´œì°®ì•„ìš”..?
 		ifmsgbox, yes
 		{
 			FileDelete, %A_ScriptDir%\log.txt
@@ -76,12 +76,12 @@ LV_GetText(inside, RowNumber,1)
 LV_GetText(inside2, RowNumber,2)
 LV_GetText(inside3, RowNumber,3)
 
-if inside <>   ;³»¿ªÀÌ ÀÖÀ»°æ¿ì¸¸ ÀúÀå
+if inside <>   ;ë‚´ì—­ì´ ìˆì„ê²½ìš°ë§Œ ì €ì¥
 {
-	CB = %CB%%inside%   %inside2%°³   %inside3%`n
+	CB = %CB%%inside%   %inside2%ê°œ   %inside3%`n
 }
 
-if RowNumber = 100 ;ÃÖ´ë 100°³±îÁö¸¸ ÀúÀå
+if RowNumber = 100 ;ìµœëŒ€ 100ê°œê¹Œì§€ë§Œ ì €ì¥
 break
 }
 
@@ -91,7 +91,7 @@ FileAppend, %CB%, %A_ScriptDir%\log.txt
 	LV_GetText(listlog, "%logcount%")
 	FileAppend, %Log%, %A_ScriptDir%log.txt
 	*/
-	MsgBox, 0, °á°ú´Â...?!, ÀúÀå¿Ï·á!
+	MsgBox, 0, ê²°ê³¼ëŠ”...?!, ì €ì¥ì™„ë£Œ!
 	return
 }
 ifmsgbox, No
@@ -146,25 +146,25 @@ loop
 			break
 			return
 		}
-	;F4»óÈ£ÀÛ¿ë
+	;F4ìƒí˜¸ì‘ìš©
 	MouseClick, left, 499, 117, 1, 0
 	sleep, 5500
 	
-	;°ñµå È®ÀÎ
+	;ê³¨ë“œ í™•ì¸
 	Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\NoGold.png
 	If (Errorlevel = 0)
 	{
-		MsgBox, 0, ±×ÁöµÊ, °ñµå°¡ ºÎÁ·ÇÕ´Ï´Ù µ·¹ö¼¼¿À
+		MsgBox, 0, ê·¸ì§€ë¨, ê³¨ë“œê°€ ë¶€ì¡±í•©ë‹ˆë‹¤ ëˆë²„ì„¸ì˜¤
 		gui,submit,nohide
 		LV_Add("","NoGold","Unknown",hm)
 		break
 		return
 	}
-	;¾ÆÀÌÅÛ Á¾·ù °Ë»ö
+	;ì•„ì´í…œ ì¢…ë¥˜ ê²€ìƒ‰
 	Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\mk.png
 	If (Errorlevel = 0)
 	{
-		item := "¹«»ö Å¥ºê Á¶°¢"
+		item := "ë¬´ìƒ‰ íë¸Œ ì¡°ê°"
 		goto, much
 	}
 	If (Errorlevel = 1)
@@ -172,7 +172,7 @@ loop
 		Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\pm.png
 		If (Errorlevel = 0)
 		{
-			item := "ÆÄ¸êÀÇ ¸¶¼®"
+			item := "íŒŒë©¸ì˜ ë§ˆì„"
 			goto, much
 		}
 		If (Errorlevel = 1)
@@ -181,7 +181,7 @@ loop
 			If (Errorlevel = 0)
 			{
 				gui,submit,nohide
-				LV_Add("",ÆÄÀÌ¾î Æø½º ·¹º¼·ç¼Ç,1,hm)
+				LV_Add("",íŒŒì´ì–´ í­ìŠ¤ ë ˆë³¼ë£¨ì…˜,1,hm)
 				goto, break
 			}
 			If (Errorlevel = 1)
@@ -190,7 +190,7 @@ loop
 				If (Errorlevel = 0)
 				{
 					gui,submit,nohide
-					LV_Add("",Ç×¾Æ¸® ¸ğÀÚ,1,hm)
+					LV_Add("",í•­ì•„ë¦¬ ëª¨ì,1,hm)
 					goto, break
 				}
 				If (Errorlevel = 1)
@@ -204,7 +204,7 @@ loop
 			}
 		}
 	}
-	;¼ö·® °Ë»ö
+	;ìˆ˜ëŸ‰ ê²€ìƒ‰
 	much:
 	Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\1.png
 	If (Errorlevel = 0)
@@ -271,7 +271,7 @@ loop
 		}
 	}
 	mix:
-	FormatTime, hm, ,MM¿ùddÀÏ tt hh½ÃmmºĞssÃÊ
+	FormatTime, hm, ,MMì›”ddì¼ tt hhì‹œmmë¶„ssì´ˆ
 	gui,submit,nohide
 	LV_Add("",item,much,hm)
 	
