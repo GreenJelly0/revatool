@@ -1,7 +1,7 @@
 #include ReadURL.ahk             
 URL := "https://raw.githubusercontent.com/IYOOOOOO/revatool/master/README.md"                        
 Result := ReadURL(URL)
-Version := 2.3
+Version := 2.4
 RegExMatch(Result,"\W현재 최신버전은 (.*?)입니다.\W",Latest)      
 if (Latest1 > Version)
 {
