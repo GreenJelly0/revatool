@@ -1,7 +1,5 @@
-;어이어이 뭘보는거야 저리가
-;이건 나만볼 수 있는 중요한것이란 말이다
 #include ReadURL.ahk             
-URL := "https://raw.githubusercontent.com/HumanKR/revatool/master/README.md"                        
+URL := "https://raw.githubusercontent.com/IYOOOOOO/revatool/master/README.md"                        
 Result := ReadURL(URL)
 Version := 2.3
 RegExMatch(Result,"\W현재 최신버전은 (.*?)입니다.\W",Latest)      
@@ -10,7 +8,7 @@ if (Latest1 > Version)
 	MsgBox, 4164, ,현재 최신버전은 %Latest1%입니다.`n지금 업데이트 하시겠습니까?
 	IfMsgBox, Yes
 	{
-		Run, "https://github.com/IYO1585/revatool"
+		Run, "https://github.com/IYOOOOOO/revatool"
 	}
 }
 
