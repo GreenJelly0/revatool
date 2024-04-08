@@ -12,7 +12,7 @@ if (Latest1 > Version)
 	}
 }
 
-Gui, Add, Tab2, x2 y-1 w400 h160 +, 정보|로그(W.I.P)
+Gui, Add, Tab2, x2 y-1 w400 h160 +, 정보|로그
 Gui, Tab, 정보
 Gui, Add, Text, x102 y29 w200 h20 + +Center, 전장에서 F2를 누르면 리겜이 됩니다
 Gui, Add, Text, x32 y49 w350 h20 +Center, 상점/기타아이템에서 F3를 누르면 항아리를 자동으로 깨줍니다
@@ -26,7 +26,7 @@ Gui, Add, Button, x282 y89 w110 h20 g삭제, 로그 전체 삭제
 Gui, Tab, 로그
 Gui, Add, Button, x282 y119 w110 h20 g저장, 현재 로그 저장
 ; Generated using SmartGUI Creator for SciTE
-Gui, Show, w408 h166, 레바툴Beta
+Gui, Show, w408 h166, 레바툴
 
 return
 
@@ -36,7 +36,7 @@ ExitApp
 escape := false
 
 크레딧:
-MsgBox, 0, 진짜 간단한 크레딧, Made by. IYO
+MsgBox, 0, 크레딧, Made by. IYO
 return
 
 삭제:
@@ -50,7 +50,7 @@ ifmsgbox, yes
 {
 	IfExist, %A_ScriptDir%\log.txt
 	{
-		MsgBox, 4, 주의, 로그가 이미 존재합니다. 삭제하고 진행해도 괜찮아요..?
+		MsgBox, 4, 주의, 로그가 이미 존재합니다. 삭제하고 진행하시겠습니까?
 		ifmsgbox, yes
 		{
 			FileDelete, %A_ScriptDir%\log.txt
@@ -65,22 +65,22 @@ CB:=""
 RowNumber = 0
 Loop
 {
-RowNumber += 1
-inside =
-inside2 =
-inside3 =
-
-LV_GetText(inside, RowNumber,1)
-LV_GetText(inside2, RowNumber,2)
-LV_GetText(inside3, RowNumber,3)
-
-if inside <>   ;내역이 있을경우만 저장
-{
-	CB = %CB%%inside%   %inside2%개   %inside3%`n
-}
-
-if RowNumber = 100 ;최대 100개까지만 저장
-break
+	RowNumber += 1
+	inside =
+	inside2 =
+	inside3 =
+	
+	LV_GetText(inside, RowNumber,1)
+	LV_GetText(inside2, RowNumber,2)
+	LV_GetText(inside3, RowNumber,3)
+	
+	if inside <>   ;내역이 있을경우만 저장
+	{
+		CB = %CB%%inside%   %inside2%개   %inside3%`n
+	}
+	
+	if RowNumber = 100 ;최대 100개까지만 저장
+	break
 }
 
 
@@ -89,7 +89,7 @@ FileAppend, %CB%, %A_ScriptDir%\log.txt
 	LV_GetText(listlog, "%logcount%")
 	FileAppend, %Log%, %A_ScriptDir%log.txt
 	*/
-	MsgBox, 0, 결과는...?!, 저장완료!
+	MsgBox, 0, 알림, 저장완료!
 	return
 }
 ifmsgbox, No
@@ -104,26 +104,26 @@ Blockinput, Send
 sleep 10
 loop 3
 {
-send, {ctrl down}
-send, r
-sleep, 40
-send, {ctrl up}
+	send, {ctrl down}
+	send, r
+	sleep, 40
+	send, {ctrl up}
 }
 send, {enter}
 loop 5
 {
-send, {ctrl down}
-send, r
-sleep, 40
-send, {ctrl up}
+	send, {ctrl down}
+	send, r
+	sleep, 40
+	send, {ctrl up}
 }
 send, {enter}
 loop 5
 {
-send, {ctrl down}
-send, r
-sleep, 40
-send, {ctrl up}
+	send, {ctrl down}
+	send, r
+	sleep, 40
+	send, {ctrl up}
 }
 send, {enter}
 Blockinput, MousemoveOff
@@ -140,10 +140,10 @@ CoordMode, Pixel, Client
 loop
 {
 	if(escape = true)
-		{
-			break
-			return
-		}
+	{
+		break
+		return
+	}
 	;F4상호작용
 	MouseClick, left, 499, 117, 1, 0
 	sleep, 5500
@@ -152,7 +152,7 @@ loop
 	Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\NoGold.png
 	If (Errorlevel = 0)
 	{
-		MsgBox, 0, 그지됨, 골드가 부족합니다 돈버세오
+		MsgBox, 0, 오류, 골드가 부족합니다
 		gui,submit,nohide
 		LV_Add("","NoGold","Unknown",hm)
 		break
@@ -193,11 +193,31 @@ loop
 				}
 				If (Errorlevel = 1)
 				{
-					/*
-					gui,submit,nohide
-					LV_Add("","Unknown",much,hm)
-					*/
-					item := "Unknown"
+					Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\autogun.png
+					If (Errorlevel = 0)
+					{
+						gui,submit,nohide
+						LV_Add("",마이스터의 개조오토건,1,hm)
+						goto, break
+					}
+					If (Errorlevel = 1)
+					{
+						Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\revolver.png
+						If (Errorlevel = 0)
+						{
+							gui,submit,nohide
+							LV_Add("",리벤지 리볼버 레볼루션,1,hm)
+							goto, break
+						}
+						If (Errorlevel = 1)
+						{
+							/*
+							gui,submit,nohide
+							LV_Add("","Unknown",much,hm)
+							*/
+							item := "Unknown"
+						}
+					}
 				}
 			}
 		}
@@ -206,10 +226,10 @@ loop
 	much:
 	Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\1.png
 	If (Errorlevel = 0)
-		{
-			much := 1
-			goto, mix
-		}
+	{
+		much := 1
+		goto, mix
+	}
 	If (Errorlevel = 1)
 	{
 		Imagesearch, vx, vy, 1, 1, A_ScreenWidth, A_ScreenHeight, *40 images\2.png
